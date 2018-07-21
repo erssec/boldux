@@ -7,6 +7,7 @@ layout: default
           <h5 class="post-header-title">{{ page.title }}</h5>
           <h1 class="post-header-tagline">{{ page.tagline }}</h1>
           <h6 class="post-header-type">{{ page.date | date: "%-d %b %Y" | upcase }} - {% include read_time.html %}</h6>
+          <h6 class="post-header-type">{% for tag in page.tags %}<a class="post-tags" href="{{ site.url }}/tags/#{{ tag | replace:" ","-" }}">{{ tag }}</a>{% endfor %}</h6>
         </div>
       </header>
 
