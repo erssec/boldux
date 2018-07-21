@@ -1,0 +1,55 @@
+/*
+ * This file contains color profiles for
+ * the various case studies (alphabetical)
+*/
+
+
+.post {
+    $blue: #27c6dd;
+    $light-green: #afbdc4;
+    $green: #536d79;
+    $dark-gray: #3f454a;
+    $gray: #eee;
+    $light-gray: #f5f5f5;
+
+    color: #414141;
+
+    .light-gray {
+        background-color: $light-gray;
+    }
+
+    .gray {
+        background-color: $gray;
+    }
+
+    .blue {
+        background-color: $blue;
+    }
+
+    .dark-gray,
+    .light-green,
+    .blue {
+        color: $white-smoke;
+    }
+
+    .dark-gray {
+        background-color: $dark-gray;
+    }
+
+    .light-green {
+        background-color: $light-green;
+    }
+
+    .gradient {
+        background-image: linear-gradient(to bottom, $white, $gray);
+    }
+
+    .post-breakdown-summary {
+        color: $green;
+    }
+
+    // quote icon color
+    .post-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
+}

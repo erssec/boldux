@@ -1,0 +1,31 @@
+---
+layout: default
+---
+    <main class="wrapper post">
+      <header class="post-header" style=".post-header { background: url('{{ site.url }}/assets/img/{{ page.image.hero }}') #333 20% center/cover no-repeat !important;}">
+        <div class="post-header-content container">
+          <h5 class="post-header-title">{{ page.title }}</h5>
+          <h1 class="post-header-tagline">{{ page.tagline }}</h1>
+          <h6 class="post-header-type">{{ page.date | date: "%-d %b %Y" | upcase }} - {% include read_time.html %}</h6>
+        </div>
+      </header>
+
+      <section class="block column padded white-smoke">
+        <div class="container">
+          <div class="post-content">{{ content }}</div>
+        </div>
+      </section>
+
+{% if site.owner.disqus-shortname and page.comments == true %}
+      <section class="comments-block padded">
+        <div class="comments-content container">
+          <div class="comments-text">
+            <div id="disqus_thread">Comments are provided by Disqus. To respect user privacy and reduce page size, Disqus is only loaded on user prompt.<br><br>
+              <button class="btn btn-text icon-arrow" onclick="disqus();return false;">SHOW COMMENTS</button>
+            </div>
+            {% include disqus.html %}
+          </div>
+        </div>
+      </section>
+{% endif %}
+{% include sections/cta-blog.html %}

@@ -1,0 +1,89 @@
+.comments-block {
+  align-items: center;
+  background-color: $white-smoke;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.comments-button {
+  display: none;
+
+  @include media('>=md') {
+    align-items: center;
+    background-color: $white-smoke;
+    display: flex;
+    flex-shrink: 0;
+    font-size: 0;
+    position: relative;
+    text-decoration: none;
+    transition: transform 500ms ease;
+
+    // if IE set position to absolute
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      position: absolute;
+    }
+
+    // Icon
+    &::before {
+      @include icon-arrow;
+      content: '';
+      display: inline-flex;
+      margin: 20px;
+    }
+
+    // Text
+    &::after {
+      @include text('sentinel', 16, 300, $jaguar);
+      content: attr(title);
+      display: inline-flex;
+      opacity: 0;
+      transition: opacity 450ms ease 150ms;
+    }
+
+    &:hover,
+    &.is-expanded {
+      &::after {
+        opacity: 1;
+        transition: opacity 450ms ease 150ms;
+      }
+    }
+
+    &:hover {
+      transform: translateX(0);
+    }
+
+    &.is-expanded {
+      transform: translateX(20px);
+
+      &:hover {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.absolute {
+    position: absolute;
+  }
+}
+
+.comments-content {
+  color: $jaguar;
+  text-align: center;
+}
+
+.comments-title {
+  @include text('source-sans-pro', 43, 300);
+}
+
+.comments-text {
+  @include text('source-sans-pro', 26, 300);
+  margin: 0 0 $textGap*1.5;
+}
+
+.comments-subtext {
+  @include text('sentinel', 18, 300, $charcoal);
+  margin: -$textGap 0 $textGap*1.5;
+}

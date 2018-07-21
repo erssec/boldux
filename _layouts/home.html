@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  {% include _head.html %}
+</head>
+
+<body>
+  <!-- content -->
+  <main class="wrapper">
+    <div class="menu-home active">
+      <div class="menu-home-trigger">
+        {% include _menu.html %}
+      </div>
+    </div>
+    <header class="hero hero-lg">
+      <div class="row">
+        <div class="column container align-left">
+          <p class="hero-tagline">{{ page.tagline }}</p>
+          <p class="hero-title">{{ page.text }}</p>
+          <a href="{{ site.url }}/blog" class="btn btn-box-lg alt">Visit the blog</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="block home-mountain white-smoke">
+      <div class="container row">
+        <div class="inner-block extra-padded column center half-md">
+          <div class="inner-block-content gutter-right">
+            <p class="content-tagline">{{ page.tagline2 }}</p>
+            <p class="content-title">{{ page.text2 }}</p>
+            <a href="{{ site.url }}/about" class="btn btn-box">Read More</a>
+          </div>
+        </div>
+        <div class="inner-block column align-bottom half-md home-mountain-image">
+          <img data-normal="/assets/img/sections/home/home-mountain.svg" alt="" class="inner-block-image contain">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block padded-top jaguar">
+      <div class="cta-content container">
+        <a href="{{ site.url }}/blog" class="btn btn-text icon-arrow alt cta-title">Exciting News</a>
+      </div>
+    </section>
+
+      {% include _footer.html %}
+    </main>
+
+    {% include _footer-scripts.html %}
+
+</body>
+
+</html>

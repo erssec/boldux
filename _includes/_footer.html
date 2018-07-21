@@ -1,0 +1,45 @@
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content row wrap">
+        <div class="footer-logo-box column  clear-gutter-xl">
+          <a class="footer-logo" href="{{ site.url }}/">{{ site.title }}</a>
+        </div>
+        <div class="footer-box column">
+          <p class="footer-heading">Get In Touch</p>
+          {% if author.email %}<a href="mailto:{{ author.email }}" class="footer-link email">{{ author.email }}</a>{% endif %}
+        </div>
+        <div class="footer-box column">
+          <p class="footer-heading">Follow</p>
+          <div class="footer-icon-box row wrap">
+            {% if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}" class="footer-icon-link" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>{% endif %}
+            {% if author.github %}<a href="https://github.com/{{ author.github }}" class="footer-icon-link" target="_blank"><i class="fa fa-fw fa-github"></i></a>{% endif %}
+            {% if author.rss %}<a href="{{ site.url }}/{{ author.rss }}" class="footer-icon-link" target="_blank"><i class="fa fa-fw fa-feed"></i></a>{% endif %}
+          </div>
+        </div>
+        <div class="footer-box column">
+          <p class="footer-heading">Recent Posts</p>
+          {% for post in site.posts limit:3 %}
+          <a href="{{ site.url }}/{{ post.url }}" class="footer-link" target="_blank">{{ post.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="footer-content row center">
+        <div class="footer-box column gutter-quarter auto-xs absolute-center-xs">
+          <p class="footer-text">
+            <span class="footer-copyright">
+              &copy;
+              <script>document.write(new Date().getFullYear());</script>
+              <noscript>2018</noscript>
+            </span>
+            &nbsp;{{ site.title }}. Some Rights Reserved.
+          </p>
+        </div>
+        <div class="footer-box column gutter-quarter auto-xs absolute-center-xs">
+          <p class="footer-text">&#183; &#183; &#183; &#183; &#183;</p>
+        </div>
+        <div class="footer-box column gutter-quarter auto-xs absolute-center-xs">
+          <p class="footer-text">Powered by <a href="http://jekyllrb.com/">Jekyll</a> - <a href="https://github.com/glitchwitchio/boldux">BoldUX Theme</a></p>
+        </div>
+      </div>
+    </div>
+</footer>

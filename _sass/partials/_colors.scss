@@ -1,0 +1,27 @@
+/*
+ * This file contains color profiles for
+ * the various core pages of the site
+*/
+
+.white {
+  background-color: $white;
+}
+
+.white-smoke {
+  background-color: $white-smoke;
+}
+
+.jaguar {
+  background-color: $jaguar;
+  color: $white-smoke;
+}
+
+.night-rider {
+  background-color: $night-rider;
+  color: $white-smoke;
+}
+
+.charcoal {
+  background-color: $charcoal;
+  color: $white-smoke;
+}

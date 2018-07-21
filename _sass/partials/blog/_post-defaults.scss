@@ -1,0 +1,60 @@
+/*
+ * This file contains the default markup
+ * used across the various case studies
+*/
+
+.post {
+    overflow: hidden;
+}
+
+.post-block-tagline {
+    @include text('trade-gothic', 16, 400);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin: 0 0 $textGap;
+    text-transform: uppercase;
+}
+
+.post-block-heading {
+    @include text('source-sans-pro', 36, 300);
+    line-height: 1.2;
+    margin: 0 0 $textGap;
+
+    br {
+        display: none;
+
+        @include media('>=md') {
+            display: block;
+        }
+    }
+
+    &.lg {
+        @include text('source-sans-pro', 48);
+    }
+}
+
+.post-block-text {
+    @include text('sentinel', 16, 300);
+    line-height: 1.9;
+    margin: 0;
+    max-width: 375px;
+
+    .content-centered & {
+        margin: auto;
+        max-width: 500px;
+    }
+
+    &.wide {
+        max-width: 650px;
+    }
+
+    &.lg {
+        @include text('sentinel', 24);
+        line-height: 1.4;
+        margin: 0 0 $textGap * 1.5;
+    }
+
+    + .post-block-text {
+        margin-top: $textGap;
+    }
+}

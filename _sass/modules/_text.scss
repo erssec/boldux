@@ -1,0 +1,64 @@
+// Import 'responsive-font'
+@import "vendors/viewport-text";
+
+// IMPORT FONTS HERE
+
+// trade gothic
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url('/assets/fonts/trade-gothic-lt-std.eot');
+  src:
+    url('/assets/fonts/trade-gothic-lt-std.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/trade-gothic-lt-std.woff2') format('woff2'),
+    url('/assets/fonts/trade-gothic-lt-std.woff') format('woff'),
+    url('/assets/fonts/trade-gothic-lt-std.ttf') format('truetype'),
+    url('/assets/fonts/trade-gothic-lt-std.svg#wf') format('svg');
+}
+
+// source sans pro
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+
+@import url('/assets/fonts/sentinel.css');
+
+
+// FONT FAMILY VARIABLES (used for calling font)
+@mixin font-family($family) {
+  @if ($family == 'trade-gothic') {
+    font-family: 'Trade Gothic LT Std', sans-serif;
+  }
+
+  @else if ($family == 'source-sans-pro') {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  @else if ($family == 'sentinel') {
+    font-family: 'Sentinel A', 'Sentinel B', serif;
+  }
+
+  @else {
+    font-family: sans-serif;
+  }
+}
+
+// Creates responsive font that scales with screen size (input max-size)
+@mixin sizer($size) {
+  $size-px: $size * 1px; // Convert to px
+  $size-reduce-px: $size * 0.7 * 1px; // Convert to smaller px variant for scaling (can change decimal value for project need)
+  $size-rem: $size / 10 * 1rem; // Convert to rem
+
+  @include responsive-font(4vw, $size-reduce-px, $size-px, $size-rem);
+}
+
+// Mixin used for calling font
+@mixin text($family, $size, $weight: null, $color: null) {
+  @include font-family($family);
+  color: $color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $weight;
+  text-rendering: optimizeLegibility;
+
+  @if ($size != null) {
+    @include sizer($size);
+  }
+}

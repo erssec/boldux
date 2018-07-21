@@ -1,0 +1,66 @@
+@import 'post-colors';
+
+/*
+ * This file contains content for the following sections:
+ *   - Referral
+ *   - CTA
+*/
+
+// REFERRAL
+.post-referral-blockquote {
+    @include text('source-sans-pro', 45, 300);
+    line-height: 1.15;
+    margin: 0 20px; // accounts for ::before
+    max-width: 600px;
+    position: relative;
+    quotes: '“' '”' '‘' '’'; // shortcodes do not work, must be string
+
+    @include media('>=md') {
+        margin: 0;
+    }
+
+    &::before {
+        content: open-quote;
+        left: -20px;
+        position: absolute;
+        top: 0;
+    }
+
+    &::after {
+        content: close-quote;
+        margin-left: 5px;
+    }
+}
+
+.post-referral-quote-icon {
+    // color and svg import in '_post-colors.scss'
+    margin: 0 0 $textGap * 2;
+
+    .centered & {
+        margin: 0 auto $textGap * 2;
+    }
+}
+
+.post-referral-text {
+    @include text('source-sans-pro', 20, 300);
+    line-height: 2;
+    margin: 0 0 $textGap * 2;
+
+    .centered & {
+        @include text('source-sans-pro', 35, 300);
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    + .post-referral-text {
+        margin: -$textGap 0 $textGap * 2;
+    }
+}
+
+.post-referral-author {
+    @include text('sentinel', 18, 300);
+
+    .centered & {
+        text-align: center;
+    }
+}

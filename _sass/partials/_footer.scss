@@ -1,0 +1,152 @@
+.footer {
+    background-color: $jaguar;
+    overflow: hidden;
+    padding: $gridGap * 2 0 $gridGap * 1.5;
+    position: relative;
+    transition: padding 500ms ease 300ms;
+}
+
+.footer-content {
+    justify-content: space-between;
+
+    @include media('>=xl') {
+        justify-content: space-around;
+    }
+    + .footer-content {
+        margin-top: $gridGap;
+    }
+}
+
+.footer-box.column {
+    align-items: flex-start;
+    flex: 0 1 auto;
+
+    @include media('<=md') {
+        flex: 0 1 100%;
+    }
+
+    + .footer-box.column {
+        margin-top: $gridGap;
+
+        @include media('>md') {
+            margin-top: 0;
+        }
+    }
+}
+
+.footer-logo-box.column {
+    flex: 0 0 100%;
+
+    @include media('>=xl') {
+        flex: 0 1 auto;
+        max-width: 300px;
+        min-width: 0;
+        padding-top: 2px; // align with footer-headings
+    }
+}
+
+.footer-logo {
+    @include hide-text;
+    background: url('/assets/img/icons/wordmark-mobile.png') center center
+        no-repeat;
+    display: block;
+    height: 16px;
+    margin-bottom: $gridGap;
+    width: 97px;
+}
+
+.footer-heading {
+    @include text('trade-gothic', 14, 600, $silver);
+    letter-spacing: 2px;
+    margin: 0 0 $textGap;
+    text-transform: uppercase;
+
+    @include media('>=md') {
+        margin: 0 0 $textGap * 2;
+    }
+}
+
+.footer-link {
+    @include text('source-sans-pro', 16, 300, $silver);
+    line-height: 1;
+    text-decoration: none;
+    transition: color 300ms ease;
+
+    &.email {
+        @include text('source-sans-pro', 24, 300, $silver);
+        line-height: 1.2;
+    }
+
+    &:hover {
+        color: $white-smoke;
+    }
+
+    + .footer-link {
+        margin-top: $textGap/2;
+    }
+}
+
+.footer-icon-box {
+    margin: 0 #{-$textGap} #{-$textGap/2} 0; // negative margins to offset social links
+}
+
+.footer-icon-link {
+    align-items: center;
+    color: $jaguar;
+    background-color: $silver;
+    border-radius: 50%;
+    display: flex;
+    height: 30px;
+    font-size: 16px;
+    justify-content: center;
+    margin: 0 $textGap $textGap/2 0;
+    position: relative;
+    transition: background-color 300ms ease;
+    width: 30px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $white-smoke;
+    }
+
+    &::before {
+        @include position(absolute, 0, 0, 0, 0);
+        content: '';
+        display: block;
+        margin: auto;
+    }
+
+}
+
+.footer-text {
+    @include text('sentinel', 12, 300, rgba($silver, 0.4));
+    margin: 0;
+    a {
+      text-decoration: none;
+      color: rgba($silver, 0.6);
+    }
+    @include media('>=sm') {
+        font-size: 14px;
+    }
+}
+
+.footer-stars {
+    // use `&#9733;` for star icon in html markup
+    background-color: transparent;
+    border: 0;
+    color: $silver;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    opacity: 0.4;
+    padding: 0;
+    text-align: center;
+    text-shadow: -20px 0 0, 20px 0 0; // duplicates star
+    transition: opacity 500ms ease;
+    width: 60px;
+    z-index: 1;
+
+    &:hover {
+        opacity: 1;
+    }
+}

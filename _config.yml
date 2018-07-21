@@ -1,0 +1,52 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: BoldUX
+url: https://boldux.glitchwitch.io
+#url: http://127.0.0.1:4000
+
+sass:
+    sass_dir: _sass
+keywords:
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          UTC
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /blog/:year-:month/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+# Contact Info
+  email: "hello@jekyll.tld"
+  phone: "404-500-1337"
+  city: "Toronto"
+  state: "ON"
+  postalcode: "M5A 0X0"
+  address: "404 Address Ave"
+# APIs and other settings
+  giphy: RmufVIQaRvbF8g8KsT80ByLnCf0JgcmR # Needed for 404 background fail gif
+  disqus-shortname: glitchwitchio
+  google-analytics: #UA-XXXXXXXX-X
+  rss: feed.xml
+# Social
+  twitter: glitchwitchio
+  github: glitchwitchio

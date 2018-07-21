@@ -1,0 +1,186 @@
+/*
+ * This file contains content for the following sections:
+ *   - Header
+ *   - Executive Summary
+ *   - Breakdown
+*/
+
+// HEADER
+.post-header {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: $gridGap * 2 0;
+    position: relative; // Overlay
+    &.overlay {
+        &::after {
+            @include position(absolute, 0, 0, 0, 0);
+            background-color: $jaguar;
+            content: ' ';
+            height: 100%;
+            opacity: 0.3;
+            width: 100%;
+        }
+    } // Default Header Background
+        background: url('/assets/img/blog/sample-header.jpg') $dark-gray 20%
+            center/cover no-repeat;
+
+        @include media('>=md') {
+            background-position: center center;
+    }
+}
+
+.post-header-video-box {
+    height: 100%;
+    position: absolute;
+    width: 100%; // Overlay
+    &.overlay {
+        &::after {
+            @include position(absolute, 0, 0, 0, 0);
+            background-color: $jaguar;
+            content: ' ';
+            height: 100%;
+            opacity: 0.6;
+            width: 100%;
+        }
+    }
+}
+
+.post-header-video {
+    height: auto;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+
+.post-header-content {
+    color: $white-smoke;
+    position: relative;
+    width: auto;
+    z-index: 1;
+    &.right {
+        @include media('>=md') {
+            margin-left: auto;
+        }
+    }
+    &.bottom {
+        @include media('>=md') {
+            align-self: flex-end; // margin-bottom: 10%;
+        }
+    }
+}
+
+.post-header-logo,
+.post-header-title,
+.post-header-tagline,
+.post-header-type {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.post-header-title {
+    @include text('trade-gothic', 24, 600);
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.post-header-logo {
+    max-width: 165px;
+}
+
+.post-header-tagline {
+    @include text('source-sans-pro', 48, 300);
+    margin: $textGap * 2 0 $textGap;
+    br {
+        display: none;
+
+        @include media('>=sm') {
+            display: block;
+        }
+    }
+}
+
+.post-header-type {
+    @include text('sentinel', 18, 600);
+    margin: 0;
+}
+
+// EXECUTIVE SUMMARY
+.post-content {
+    @include text('source-sans-pro', 24, 300);
+    line-height: 1.4;
+    margin: 0;
+    &.lg {
+        @include text('source-sans-pro', 28, 200);
+    }
+    br {
+        display: none;
+    }
+    @include media('>=sm') {
+        br {
+            display: block;
+        }
+    }
+}
+
+// BREAKDOWN
+.post-breakdown {
+    overflow: hidden;
+}
+
+.post-breakdown-box {
+    max-width: 360px;
+}
+
+.post-breakdown-heading {
+    @include text('trade-gothic', 13, 600);
+    letter-spacing: 2px;
+    margin: 0 0 $textGap;
+    text-transform: uppercase;
+}
+
+.post-breakdown-summary {
+    @include text('source-sans-pro', 28, 300);
+    margin: 0 0 $textGap * 0.75;
+}
+
+.post-breakdown-detail,
+.post-breakdown-list-item {
+    @include text('sentinel', 15, 300);
+    line-height: 1.9;
+    margin: 0;
+}
+
+.post-breakdown-detail {
+    + .post-breakdown-detail {
+        margin-top: $textGap;
+    }
+}
+
+.post-breakdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.post-breakdown-footnote {
+    border-top: 2px solid $dark-gray;
+    margin-top: $textGap;
+    padding-top: $textGap;
+
+    @include media('>=md') {
+        margin-top: $textGap * 2;
+    }
+}
+
+.post-breakdown-footnote-text {
+    @include text('sentinel', 10, 300, $dark-gray);
+    font-style: italic;
+    margin: 0;
+}

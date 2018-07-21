@@ -1,0 +1,96 @@
+{% if page.title %}
+  {% capture title %}{{ site.title }} - {{ page.title }}{% endcapture %}
+{% else %}
+  {% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}
+
+{% if page.excerpt %}
+  {% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+{% else %}
+  {% capture description %}{{ site.description }}{% endcapture %}
+{% endif %}
+{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+        <title>{{ title }}</title>
+        <base href="{{ site.url }}/">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name="description" content="{{ page.tagline }}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <!-- Twitter Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:creator" content="@{{ author.twitter }}" />
+        <meta name="twitter:description" content="{{ page.tagline }}">
+        <meta name="twitter:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
+
+        <!-- Open Graph Tags -->
+        <meta property="og:type" content="blog">
+        <meta property="og:url" content="{{ site.url }}">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:description" content="{{ page.tagline }}">
+        <meta property="og:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="{{ site.url }}/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="{{ site.url }}/assets/img/favicons/safari-pinned-tab.png" color="#262628">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Fonts and Stylesheets -->
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/style.css'>
+        <link rel="stylesheet" href="{{ site.url }}/assets/css/font-awesome.min.css">
+
+        <!-- RSS -->
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml " | prepend: site.url }}" />
+
+
+        <!-- Scripts -->
+        <!-- Structured Data SEO -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org/",
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}",
+            "image": {% if page.image.hero contains 'http' %} "{{ page.image.hero }}" {% else %} "{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %},
+            "description": "{{ site.description }}",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "{{ author.email }}",
+              "telephone": "{{ author.phone }}",
+              "contactType": "customer service"
+            },
+            "location": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "{{ author.city }}",
+                "addressRegion": "{{ author.state }}",
+                "postalCode": "{{ author.postalcode }}",
+                "streetAddress": "{{ author.address }}"
+              }
+            }
+          }<
+        </script>
+          <style>
+            .post-breakdown-box,
+            .post-inner-block-content,
+            .post-content,
+            .post-referral-quote-icon,
+            [class*='sr-'] {
+              visibility: visible;
+            }
+
+            .post-header-logo,
+            .post-header-title,
+            .post-header-tagline,
+            .post-header-type {
+              opacity: 1;
+              visibility: visible;
+            }
+          </style>

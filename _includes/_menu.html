@@ -1,0 +1,23 @@
+<div class="menu-logo-wrapper">
+  <a class="menu-logo" href="{{ site.url }}/"></a>
+</div>
+
+
+<a href="#void" class="menu-mobile-toggle">
+  <span class="menu-mobile-box">
+    <span class="menu-mobile-inner"></span>
+  </span>
+</a>
+
+<section class="menu">
+  <div class="menu-wrapper">
+    <a class="menu-mobile-logo" href="{{ site.url }}/">{{ site.title }}</a>
+
+    <div class="menu-container">
+      {% for item in site.data.navigation %}
+      <a class="menu-link" href="{{ item.url }}">{{ item.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- END menu -->

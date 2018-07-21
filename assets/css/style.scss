@@ -1,0 +1,104 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+// NORMALIZE
+// @import 'normalize'; // loaded from node_modules
+@import "components/normalize";
+
+
+// VENDORS
+//@import 'animate.scss'; // loaded from node_modules
+@import "components/animate-scss/animate";
+//@import 'include-media'; // loaded from node_modules
+@import "components/include-media";
+
+@import 'vendors/link-underline';
+
+// MODULES & VARIABLES
+@import 'modules/svgs';
+@import 'modules/text';
+@import 'modules/utilities';
+@import 'modules/variables';
+
+// PARTIALS
+@import 'partials/blocks';
+@import 'partials/btns';
+@import 'partials/cards';
+@import 'partials/cta';
+@import 'partials/colors';
+@import 'partials/comments';
+@import 'partials/content';
+@import 'partials/footer';
+@import 'partials/hero';
+@import 'partials/layout';
+@import 'partials/menu';
+
+// PARTIALS - SECTIONS
+@import 'partials/sections/contact';
+@import 'partials/sections/home';
+
+// PARTIALS - WORK
+@import 'partials/blog/post-colors';
+@import 'partials/blog/post-defaults';
+@import 'partials/blog/post-footer';
+@import 'partials/blog/post-frames';
+@import 'partials/blog/post-intro';
+@import 'partials/blog/post-subnav';
+
+// BOX-SIZING - FONT-SIZING PRESETS
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // Scales 1 rem unit to 10px
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $night-rider;
+    color: $jaguar;
+    font-size: 1.4rem; // = 14px default font size
+    margin: 0;
+    min-width: 250px;
+}
+
+// Accessibility focus outline
+button,
+a {
+    &:focus {
+        outline: 1px dotted $dark-gray;
+        outline-offset: 2px;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+}
+
+// Scroll Reveal Styles
+.post-breakdown-box,
+.post-inner-block-content,
+.post-content,
+.post-referral-quote-icon,
+[class*='sr-'] {
+    visibility: hidden;
+}
+
+// Class applied for ratio-based image scaling
+.lazy-ratio {
+    background-color: transparent;
+    flex: 0 0 100%; // ensures that it always fills box when 50/50
+    height: 0;
+    position: relative;
+
+    &.full-height {
+        min-height: 100%;
+    }
+
+    &.min-height {
+        min-height: 35vh;
+    }
+}
