@@ -2,15 +2,13 @@
 layout: post
 title:  "Test Post"
 tagline: "Bahamontes lanterne rouge normandie belgium. "
-author: Author
-category: ios
-tags: [jekyll, github]
-excerpt: "Bahamontes lanterne rouge normandie belgium. "
+description: "Bahamontes lanterne rouge normandie belgium. "
 date: 2014-12-10
 comments: true
 image:
   feature: blog/sample-feature.jpg
   hero: blog/sample-header.jpg
+tags: [jekyll, github]
 ---
 
 Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.

@@ -165,8 +165,8 @@ These are the basic features you can use with the  `post` layout.
 ---
 layout: post                                    
 title:  "Sample Post"            # The title of the post
-tagline: "This is a tagline"     # Displayed under title and used for SEO
-excerpt: "May contain awesome"   # This is the excerpt used on the blog listing
+tagline: "This is a tagline"     # Displayed under the title and for seo if no description is set
+description: "This is a description."   # Used for SEO
 date: 2018-07-17                 # Post date
 comments: true                   # Enable comments
 image:

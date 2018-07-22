@@ -1,16 +1,14 @@
 ---
-layout: post
+layout: post                                    
 title:  "Example Post Formatting"
-tagline: "Blog Description"
-author: Author
-category: ios
-tags: [jekyll, github]
-excerpt: "Hello World; Welcome to my blog!"
+tagline: "This is a tagline"
+description: "This is a description."
 date: 2013-12-15
 comments: true
 image:
   feature: blog/sample-feature.jpg
-  hero: blog/sample-header.jpg
+  hero: blog/sample-header.jpg  
+tags: [sample, markdown, formatting]
 ---
 
 # Heading 1
@@ -20,7 +18,7 @@ image:
 ##### Heading 5
 ###### Heading 6
 
-<blockquote>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</blockquote>
+>Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
 
 Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
