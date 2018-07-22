@@ -1,39 +1,5 @@
-
-<!DOCTYPE html>
-
-<html lang="en-US">
-<head>
-  {% if page.title %}{% capture title %}{{ site.title }} - {{ page.title }}{% endcapture %}{% else %}{% capture title %}{{ site.title }}{% endcapture %}{% endif %}{% if page.excerpt %}{% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}{% else %}{% capture description %}{{ site.description }}{% endcapture %}{% endif %}{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
-  <title>{{ title }}</title>
-  <base href="{{ site.url }}/">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name="description" content="{{ page.tagline }}">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <!-- Twitter Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title }}">
-  <meta name="twitter:creator" content="@{{ author.twitter }}" />
-  <meta name="twitter:description" content="{{ page.tagline }}">
-  <meta name="twitter:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
-
-  <!-- Open Graph Tags -->
-  <meta property="og:type" content="blog">
-  <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ page.tagline }}">
-  <meta property="og:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/img/favicons/favicon-16x16.png">
-  <link rel="manifest" href="{{ site.url }}/assets/img/favicons/manifest.json">
-  <link rel="mask-icon" href="{{ site.url }}/assets/img/favicons/safari-pinned-tab.png" color="#262628">
-  <meta name="theme-color" content="#ffffff">
+{% if page.title %} {% capture title %}{{ site.title }} - {{ page.title }}{% endcapture %} {% else %} {% capture title %}{{ site.title }}{% endcapture %} {% endif %} {% if page.description %} {% capture description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% endcapture %} {% elsif page.tagline %} {% capture description %}{{ page.tagline | strip_html | strip_newlines | truncate: 160 }}{% endcapture %} {% else %} {% capture description %}{{ page.content | strip_html | strip_newlines | truncate: 160 }}{% endcapture %} {% endif %} {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+  {% include _head.html %}
 
   <!-- Fonts and Stylesheets -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans Pro:600,300,200" rel="stylesheet" type="text/css">
