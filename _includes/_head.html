@@ -4,10 +4,12 @@
   {% capture title %}{{ site.title }}{% endcapture %}
 {% endif %}
 
-{% if page.excerpt %}
-  {% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+{% if page.description %}
+  {% capture description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+{% elsif page.tagline %}
+{% capture description %}{{ page.tagline | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
 {% else %}
-  {% capture description %}{{ site.description }}{% endcapture %}
+  {% capture description %}{{ page.content | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
 {% endif %}
 {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
         <title>{{ title }}</title>
@@ -15,7 +17,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <meta name="description" content="{{ page.tagline }}">
+        <meta name="description" content="{{ description }}">
         {% if site.keywords %}<meta name="keywords" content="{{ site.keywords | array_to_sentence_string }}">{% endif %}
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,14 +26,14 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ title }}">
         {% if site.owner.twitter %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}" />{% endif %}
-        <meta name="twitter:description" content="{{ page.tagline }}">
+        <meta name="twitter:description" content="{{ description }}">
         <meta name="twitter:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
 
         <!-- Open Graph Tags -->
         <meta property="og:type" content="blog">
         <meta property="og:url" content="{{ site.url }}">
         <meta property="og:title" content="{{ title }}">
-        <meta property="og:description" content="{{ page.tagline }}">
+        <meta property="og:description" content="{{ description }}">
         <meta property="og:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
 
         <!-- Favicons -->
@@ -59,7 +61,7 @@
             "name": "{{ site.title }}",
             "url": "{{ site.url }}",
             "image": {% if page.image.hero contains 'http' %} "{{ page.image.hero }}" {% else %} "{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %},
-            "description": "{{ site.description }}",
+            "description": "{{ description }}",
             "contactPoint": {
               "@type": "ContactPoint",
               "email": "{{ author.email }}",

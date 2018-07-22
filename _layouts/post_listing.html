@@ -24,7 +24,7 @@ layout: default
                 </div>
                 <div class="card-content">
                   <p class="card-title">{{ post.title }}</p>
-                  {% if post.excerpt %}<p class="card-tagline">{{ post.excerpt }}</p>{% endif %}
+                  {% if post.description %}<p class="card-tagline">{{ post.description | strip_html | strip_newlines | truncate: 120 }}</p> {% elsif post.tagline %} <p class="card-tagline">{{ post.tagline | strip_html | strip_newlines | truncate: 120 }}</p> {% else %} <p class="card-tagline">{{ post.content | strip_html | strip_newlines | truncate: 120 }}</p>{% endif %}
                 </div>
               </a>
             </div>
