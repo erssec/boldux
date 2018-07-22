@@ -23,7 +23,7 @@
         <!-- Twitter Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ title }}">
-        <meta name="twitter:creator" content="@{{ author.twitter }}" />
+        {% if site.owner.twitter %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}" />{% endif %}
         <meta name="twitter:description" content="{{ page.tagline }}">
         <meta name="twitter:image" content={% if page.image.hero contains 'https' or page.image.hero contains 'http' %}"{{ page.image.hero }}"{% else %}"{{ site.url }}/assets/img/{{ page.image.hero }}"{% endif %}>
 
