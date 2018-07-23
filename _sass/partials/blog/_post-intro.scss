@@ -118,10 +118,10 @@
     color: $white-smoke !important;
     background: $jaguar;
     padding: 4px;
-    margin: 4px;
+    margin: 2px 4px 2px 0;
+    line-height: 2.2;
     &.lg {
       @include text('sentinel', 16, 300);
-      padding: 4px;
     }
 }
 
