@@ -21,7 +21,7 @@
 }
 
 .hero-tagline {
-  @include text('gothic-a1', 18, 600, $charcoal);
+  @include text('gothic-a1', 17, 900, $charcoal);
   letter-spacing: 2px;
   margin: 0 0 $textGap*2;
   text-transform: uppercase;
@@ -32,13 +32,14 @@
 }
 
 .hero-title {
-  @include text('source-sans-pro', 48, 300, $night-rider);
+  @include text('source-sans-pro', 36, 300, $night-rider);
   margin: 0 0 $textGap;
   max-width: 1000px;
 
   .hero-lg & {
-    @include text('merriweather', 55, 300, $iron);
+    @include text('merriweather', 46, 300, $iron);
     margin: 0 0 $textGap*2;
+    line-height: 1.5;
   }
 
   br {
@@ -51,7 +52,7 @@
 }
 
 .hero-text {
-  @include text('merriweather', 22, 300, $charcoal);
+  @include text('merriweather', 18, 300, $charcoal);
   line-height: 1.4;
   margin: 0;
   max-width: 800px;

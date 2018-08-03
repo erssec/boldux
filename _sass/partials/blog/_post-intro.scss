@@ -84,7 +84,7 @@
 }
 
 .post-header-title {
-    @include text('gothic-a1', 24, 600);
+    @include text('gothic-a1', 24, 900);
     letter-spacing: 3px;
     margin: 0;
     text-transform: uppercase;
@@ -107,7 +107,7 @@
 }
 
 .post-header-type {
-    @include text('merriweather', 18, 600);
+    @include text('merriweather', 16, 600);
     margin: 0 0 10px 0;
 }
 
@@ -118,10 +118,10 @@
   color: $white-smoke !important;
   background: $jaguar;
   padding: 4px;
-  margin: 4px;
+  margin: 2px 4px 2px 0;
+  line-height: 2.2;
   &.lg {
     @include text('merriweather', 16, 300);
-    padding: 4px;
   }
 }
 
@@ -131,7 +131,7 @@
 
 // EXECUTIVE SUMMARY
 .post-content {
-    @include text('source-sans-pro', 24, 300);
+    @include text('source-sans-pro', 18, 300);
     line-height: 1.4;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -162,6 +162,13 @@
   color: #555 !important;
 }
 
+.post-content blockquote {
+ display:block;
+ position:relative;
+ padding-left:20px;
+ font-style:italic;
+ border-left:5px solid #ccc;
+}
 
 // BREAKDOWN
 .post-breakdown {

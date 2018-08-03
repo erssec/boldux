@@ -26,7 +26,7 @@
 }
 
 .contact-title {
-  @include text('gothic-a1', 18, 700, $charcoal);
+  @include text('gothic-a1', 18, 900, $charcoal);
   letter-spacing: 2px;
   margin: 0 0 $textGap*1.5;
   text-transform: uppercase;
@@ -156,7 +156,7 @@
 }
 
 .contact-front-heading {
-  @include text('gothic-a1', 14, 600);
+  @include text('gothic-a1', 14, 900);
   letter-spacing: 3px;
   margin: 0;
   text-transform: uppercase;
@@ -228,7 +228,7 @@
 }
 
 .contact-back-tagline {
-  @include text('gothic-a1', 14, 700);
+  @include text('gothic-a1', 14, 900);
   letter-spacing: 2px;
   margin: 0;
   text-transform: uppercase;

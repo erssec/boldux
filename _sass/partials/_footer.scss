@@ -56,7 +56,7 @@
 }
 
 .footer-heading {
-    @include text('gothic-a1', 14, 600, $silver);
+    @include text('gothic-a1', 13, 900, $silver);
     letter-spacing: 2px;
     margin: 0 0 $textGap;
     text-transform: uppercase;
