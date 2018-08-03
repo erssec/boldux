@@ -111,6 +111,32 @@
     margin: 0 0 10px 0;
 }
 
+
+.post-header-credit {
+  position: absolute;
+  float: right;
+  bottom: 0;
+  right: 0;
+  @include text('merriweather', 10, 300);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white-smoke !important;
+  background: $jaguar;
+  padding: 4px;
+  line-height: 2.2;
+}
+
+.post-header-credit a {
+  @include text('merriweather', 10, 300);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $white-smoke !important;
+}
+
+.post-header-credit a:hover {
+  color: #ccc !important;
+}
+
 .post-tags {
   @include text('merriweather', 10, 300);
   text-transform: uppercase;

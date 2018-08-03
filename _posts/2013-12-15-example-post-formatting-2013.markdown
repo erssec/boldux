@@ -7,7 +7,9 @@ date: 2013-12-15
 comments: true
 image:
   feature: blog/sample-feature.jpg
-  hero: blog/sample-header.jpg  
+  hero: blog/sample-header.jpg
+  credit: Life Of Pix
+  creditlink: https://www.pexels.com/photo/macbook-pro-iphone-cup-desk-7974/
 tags: [sample, markdown, formatting]
 ---
 
