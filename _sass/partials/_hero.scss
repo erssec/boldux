@@ -21,7 +21,7 @@
 }
 
 .hero-tagline {
-  @include text('trade-gothic', 18, 600, $charcoal);
+  @include text('gothic-a1', 18, 600, $charcoal);
   letter-spacing: 2px;
   margin: 0 0 $textGap*2;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
   max-width: 1000px;
 
   .hero-lg & {
-    @include text('sentinel', 55, 300, $iron);
+    @include text('merriweather', 55, 300, $iron);
     margin: 0 0 $textGap*2;
   }
 
@@ -51,7 +51,7 @@
 }
 
 .hero-text {
-  @include text('sentinel', 22, 300, $charcoal);
+  @include text('merriweather', 22, 300, $charcoal);
   line-height: 1.4;
   margin: 0;
   max-width: 800px;
