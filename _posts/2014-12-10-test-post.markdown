@@ -173,11 +173,11 @@ From the Autodiscover response, we saw that the Domain Controller is DC-1. Every
 With the option `-u` and `-p`, we can specify the credentials. `--list-unc` we can specify the share or host we want to enumerate. This is how it looks like:
 `python2.7 -m peas -u 'domain\username' -p 'password' exchangeserver.domain.com --list-unc '\\dc-1\'`
 
-![image](/assets/img/blog/activesync-dc1.png)
+
 
 Maybe enumerating the DC is not the first thing you would do. It might be more beneficial to enumerate workstations or printers for files, password.txts, or other sensitive information! Active Directory domains often have a specific file server for the user profiles and home directories. Once a privileged user's password is compromised, no phishing or injection is required to access sensitive information. An attacker could simply browse all SMB shares without even touching a C2 server.
 
-![image](/assets/img/blog/activesync-workstation.png)
+
 
 With the --dl-unc option, we can download the files enumerated. This way, we have access to the internal network without no foothold in it. 
 
